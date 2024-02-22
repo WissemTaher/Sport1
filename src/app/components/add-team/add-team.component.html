@@ -1,0 +1,32 @@
+<app-banner title="Add-Team"></app-banner>
+
+  
+  <div class="site-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7">
+          <form #teamForm="ngForm" (ngSubmit)="addTeam()">
+            <div class="form-group">
+              <input type="text" name="name" [(ngModel)]="team.name" class="form-control" placeholder="Name">
+            </div>
+            <div class="form-group">
+              <input type="text" name="owner" [(ngModel)]="team.owner" class="form-control" placeholder="Stadium">
+            </div>
+            <div class="form-group">
+              <input type="text" name="staduim" [(ngModel)]="team.staduim" class="form-control" placeholder="Owner ">
+            </div>
+            <div class="form-group">
+                <input type="text" name="foundation" [(ngModel)]="team.foundation" class="form-control" placeholder="Foundation">
+              </div>
+         
+            <div class="form-group">
+              <input type="submit" class="btn btn-primary py-3 px-5" value="Add-Team">
+            </div>
+          </form>  
+        </div>
+      
+      </div>
+    </div>
+  </div>
+
+

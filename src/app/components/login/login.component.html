@@ -1,0 +1,48 @@
+<app-banner title="Login"></app-banner>
+
+<div class="site-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-7">
+        <span style="color: red;">{{msgError}}</span>
+        <form [formGroup]="loginForm">
+          <div class="form-group">
+            <input type="email" formControlName="email" class="form-control" placeholder="Email ">
+          </div>
+          <div>
+            <div *ngIf="loginForm.controls['email'].invalid && (loginForm.controls['email'].touched || loginForm.controls['email'].dirty )">
+              <div *ngIf="loginForm.controls['email'].errors.required" style="color: red;">
+                Email is required
+              </div>
+              <div *ngIf="loginForm.controls['email'].errors.email" style="color: red;">
+                Email Not Valid
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <input type="password" formControlName="password" class="form-control" placeholder="Password ">
+          </div>
+          <div>
+            <div
+              *ngIf="loginForm.controls['password'].invalid && (loginForm.controls['password'].touched || loginForm.controls['password'].dirty )">
+              <div *ngIf="loginForm.controls['password'].errors.required" style="color: red;">
+                Password is required
+              </div>
+              <div *ngIf="loginForm.controls['password'].errors.minlength" style="color: red;">
+                Password Must Have at least 6 carcs
+              </div>
+              <div *ngIf="loginForm.controls['password'].errors.maxlength" style="color: red;">
+                Password Must Have at least 12 carcs
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <input type="submit" class="btn btn-primary py-3 px-5" (click)="login()" value="login">
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- <h3>{{myString | asterix}}</h3> -->

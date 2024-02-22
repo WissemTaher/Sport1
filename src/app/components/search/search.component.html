@@ -1,0 +1,20 @@
+<app-banner title="Search"></app-banner>
+
+<form #searchTeamName='ngForm' (ngSubmit)='searchTeamOne()'>
+    <div class="form-group">
+        <label class="text-white d-block" for="name">search By team One:</label>
+        <input type="text" class="form-control" [(ngModel)]='search.teamOne' [ngModelOptions]="{standalone:true}"
+            placeholder="search By team One">
+    </div>
+    <div class="col-md-12 text-center">
+        <button type="submit" class="btn btn-primary py-3 px-5">
+            search</button>
+    </div>
+</form>
+<div class="row">
+    <div class="col-lg-12">
+        <div *ngFor='let n of result'>
+            <app-score [X]='n'></app-score>
+        </div>
+    </div>
+</div>

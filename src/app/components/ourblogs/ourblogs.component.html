@@ -1,0 +1,13 @@
+<app-banner title="Our-Blogs"></app-banner>
+
+<div class="container site-section">
+    <div class="row">
+      <div class="col title-section"> 
+      </div>
+    </div>
+     <div class="row" >
+      <div class="col-lg-6" *ngFor="let i of article">
+       <app-article [X]="i"></app-article>
+      </div>
+    </div>
+  

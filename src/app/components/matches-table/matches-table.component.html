@@ -1,0 +1,34 @@
+<div class="widget-next-match">
+    <form>
+        <div class="text-center mt-3 mb-3">
+        <label for="">Filter By team One || team Two</label>
+        <input type="text" [(ngModel)]='val' [ngModelOptions]="{standalone:true}">
+        </div>
+        here the term{{val}}
+       </form>
+    <table class="table custom-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Score One </th>
+                <th>Score Two </th>
+                <th>Team One</th>
+                <th>Team Two</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let elt of matches | filter:val">
+                <td>{{elt._id}}</td>
+                <td>{{elt.scoreOne}}</td>
+                <td>{{elt.scoreTwo}}</td>     
+                <td><strong class="text-white">{{elt.teamOne}}</strong></td>
+                <td><strong class="text-white">{{elt.teamTwo}}</strong></td>
+                <td><button type="button" class="btn btn-success" (click)="display(elt._id)">Display</button>
+                <button type="button" class="btn btn-warning" (click)="edit(elt._id)">Edit</button>
+                <button type="button" class="btn btn-danger" (click)="delete(elt._id)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
